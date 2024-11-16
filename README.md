@@ -1,8 +1,20 @@
-# [Mapping Templates: Topo, Hydro, Population, Site Locator]{.smallcaps}
+---
+title: 'Standard Map Templates: Site Locator, Population, Hydrosheds, Topographic'
+author: "Murphy, S."
+date: "2024-09-16"
+output: 
+  html_document:
+    keep_md: TRUE
+    toc: TRUE
+    toc_float: TRUE
+---
 
-## [Site Locator Map (1:70,000)]{.smallcaps}
 
-##### [Derive `aoi` & `bbox` from site boundary & national borders,]{.smallcaps}
+
+## Site Locator Map (1:70,000)
+
+##### Derive `aoi` & `bbox` from site boundary & national borders,
+
 
 ``` r
 aoi_site   = sf::read_sf("./inputs/chilwa_watershed_4326.shp")
@@ -17,7 +29,8 @@ bbox_region = terra::vect(terra::ext(vect(aoi_region)) * 1.5)
 crs(bbox_region) = "epsg:4326"
 ```
 
-##### [Download basemap tiles for higher res mapping,]{.smallcaps}
+##### Download basemap tiles for higher res mapping,
+
 
 ``` r
 # 'zoom' = scale & resolution (https://wiki.openstreetmap.org/wiki/Zoom_levels)
@@ -49,3 +62,5 @@ tmap::tmap_save(
 ```
 
 ![](outputs/map_locator_site.png)
+
+

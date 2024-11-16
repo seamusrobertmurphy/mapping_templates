@@ -105,3 +105,5 @@ tmap::tmap_save(
 ![](outputs/map_locator_site.png)
 
 
+## Country Locator Map
+
